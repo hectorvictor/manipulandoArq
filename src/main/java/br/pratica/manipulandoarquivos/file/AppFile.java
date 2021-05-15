@@ -1,9 +1,9 @@
-package br.pratica.manipulandoarquivos;
+package br.pratica.manipulandoarquivos.file;
 
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.TagAction;
+
 
 public class AppFile {
     public static void main(String[] args) throws IOException {
@@ -18,19 +18,25 @@ public class AppFile {
         long tamanho = 0;
         File[] arquivo = diretorio.listFiles();
 
-        for(File p: arquivo) {
-            tamanho += arquivo.length;
+        for(File x: arquivo) {
+            if(x.isDirectory()) {
+                tamanho += calcularTamanhoBytesDoDiretorio(x);
+            }else {
+                tamanho += x.length();
+
+            }
         }     
-
-
         return tamanho;
     }
 
-    private static void listarArquivosDiretorio(File diretorio) {
+    private static void listarArquivosDiretorio(File diretorio) throws IOException {
         File[] arquivo = diretorio.listFiles();
 
         for(File p: arquivo) {
-            System.out.println(p.getName()+ "- tamanho: "+ p.length() + " Bytes");
+            if(p.isDirectory()) {
+                listarArquivosDiretorio(p);
+            }
+            System.out.println(p.getCanonicalPath()+ "- tamanho: "+ p.length() + " Bytes");
 
         }
     }
