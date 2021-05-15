@@ -8,8 +8,8 @@ public class praticaManipularArquivos {
         
         File diretorio = new File("/home/hector/Documentos");
         listarArquivos(diretorio);
-        long tamanho = calcularTamanhoDeBytes(diretorio);
-        System.out.println("Total de Bytes: " + tamanho);
+        long tamanhoDiretorio = calcularTamanhoDeBytes(diretorio);
+        System.out.println("Total de Bytes: " + tamanhoDiretorio);
     }      
 
     private static long calcularTamanhoDeBytes(File diretorio) {
@@ -17,7 +17,12 @@ public class praticaManipularArquivos {
 
         long tamanho = 0;
         for(File p : arquivos) {
-            tamanho += p.length();
+            if(p.isDirectory()) {
+                tamanho += calcularTamanhoDeBytes(p);
+            } else {
+                tamanho += p.length();
+
+            }
         }
 
         return tamanho;
@@ -27,6 +32,9 @@ public class praticaManipularArquivos {
         File[] arquivos = diretorio.listFiles();
 
         for(File x : arquivos) {
+            if(x.isDirectory()) {
+                listarArquivos(x);
+            }
             System.out.println(x.getCanonicalPath() + " tamanho de bytes: "+x.length());
         }
     }
