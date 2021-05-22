@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch AppArquivo",
+            "request": "launch",
+            "mainClass": "br.pratica.estudo20210555.AppArquivo",
+            "projectName": "manipulandoarquivos"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch AppCopiaDeArquivos",
+            "request": "launch",
+            "mainClass": "br.pratica.manipulandoarquivos.copiaArquivos.AppCopiaDeArquivos",
+            "projectName": "manipulandoarquivos"
+        },
+        {
+            "type": "java",
+            "name": "Launch AppFile",
+            "request": "launch",
+            "mainClass": "br.pratica.manipulandoarquivos.file.AppFile",
+            "projectName": "manipulandoarquivos"
+        },
+        {
+            "type": "java",
+            "name": "Launch LerArquivoText",
+            "request": "launch",
+            "mainClass": "br.pratica.manipulandoarquivos.lerArquivo.LerArquivoText",
+            "projectName": "manipulandoarquivos"
+        },
+        {
+            "type": "java",
+            "name": "Launch praticaCopiaDeDiretorio",
+            "request": "launch",
+            "mainClass": "br.pratica.manipulandoarquivos.pratica.praticaCopiaDeDiretorio",
+            "projectName": "manipulandoarquivos"
+        },
+        {
+            "type": "java",
+            "name": "Launch praticaManipularArquivos",
+            "request": "launch",
+            "mainClass": "br.pratica.manipulandoarquivos.pratica.praticaManipularArquivos",
+            "projectName": "manipulandoarquivos"
+        },
+        {
+            "type": "java",
+            "name": "Launch FileTest",
+            "request": "launch",
+            "mainClass": "br.pratica.manipulandoarquivos.pratica20210519.FileTest",
+            "projectName": "manipulandoarquivos"
+        }
+    ]
+}
